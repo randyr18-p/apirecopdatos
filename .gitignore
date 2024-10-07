@@ -3,3 +3,6 @@ env/
 
 # Archivos de caché
 __pycache__/
+
+
+.env
