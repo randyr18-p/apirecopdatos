@@ -44,3 +44,5 @@ class Auditoria(Base):
 
     # Relación con el cliente
     cliente = relationship("Cliente", back_populates="auditorias")
+    
+    # fin codigo
