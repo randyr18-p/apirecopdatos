@@ -5,10 +5,15 @@ from typing import List, Optional
 from fastapi.responses import StreamingResponse, JSONResponse
 import csv
 from io import StringIO
+from dotenv import load_dotenv
+import os
 
 import models
 import schemas
 from database import engine, get_db
+
+# Load environment variables from a .env file
+load_dotenv()
 
 app = FastAPI()
 
@@ -38,7 +43,7 @@ async def registrar_accion_auditoria(db: Session, cliente_id: int, accion: str):
 
 @app.get("/")
 def read_root():
-    return {"message": "Bienvenido a la API FastAPI"}
+    return {"message": "Bienvenido a la API San Andres Grocery and Bakery"}
 
 
 # Crear un nuevo cliente
@@ -62,7 +67,7 @@ async def obtener_clientes(skip: int = 0, limit: int = 10, db: Session = Depends
     return clientes
 
 
-# Obtener un cliente por ID
+# Obtener un cliente por IDset DATABASE_URL={database_url}
 @app.get("/clientes/{cliente_id}", response_model=schemas.ClienteResponse)
 async def obtener_cliente(cliente_id: int, db: Session = Depends(get_db)):
     cliente = db.query(models.Cliente).filter(models.Cliente.id == cliente_id).first()

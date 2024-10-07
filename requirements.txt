@@ -1,6 +1,7 @@
 annotated-types==0.7.0
 anyio==4.6.0
 click==8.1.7
+gunicorn==21.2.0 
 colorama==0.4.6
 fastapi==0.115.0
 h11==0.14.0
@@ -16,3 +17,4 @@ typing_extensions==4.12.2
 uvicorn==0.31.0
 watchfiles==0.24.0
 websockets==13.1
+
