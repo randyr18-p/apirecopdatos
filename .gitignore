@@ -3,6 +3,11 @@ env/
 
 # Archivos de caché
 __pycache__/
+*.pyc
 
 
 .env
+
+.envrc
+.DS_Store  # Archivos de macOS
+.vscode/   # Configuraciones específicas de VS Code (opcional)
